@@ -1,7 +1,7 @@
 package org.example.domain;
 
 import org.example.skills.Tackelable;
-import org.example.utill.DrawPokemons;
+import org.example.utill.DrawHandler;
 import org.example.utill.SleepUtill;
 
 public class Pichu extends ElectricTypePokemon implements Tackelable {
@@ -23,6 +23,6 @@ public class Pichu extends ElectricTypePokemon implements Tackelable {
 
     @Override
     public void drawPokemon() {
-        DrawPokemons.drawPichu();
+        DrawHandler.drawPichu();
     }
 }

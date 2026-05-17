@@ -3,7 +3,7 @@ package org.example.domain;
 import org.example.skills.BoltTackleable;
 import org.example.skills.Millionboltable;
 import org.example.skills.Tackelable;
-import org.example.utill.DrawPokemons;
+import org.example.utill.DrawHandler;
 import org.example.utill.SleepUtill;
 
 public class Raichu extends ElectricTypePokemon implements Tackelable, Millionboltable, BoltTackleable {
@@ -21,7 +21,7 @@ public class Raichu extends ElectricTypePokemon implements Tackelable, Millionbo
 
     @Override
     public void drawPokemon() {
-        DrawPokemons.drawRaichu();
+        DrawHandler.drawRaichu();
     }
 
     @Override

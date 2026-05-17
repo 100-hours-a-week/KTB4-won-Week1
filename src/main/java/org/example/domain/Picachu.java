@@ -2,7 +2,7 @@ package org.example.domain;
 
 import org.example.skills.Millionboltable;
 import org.example.skills.Tackelable;
-import org.example.utill.DrawPokemons;
+import org.example.utill.DrawHandler;
 import org.example.utill.SleepUtill;
 
 public class Picachu extends ElectricTypePokemon implements Tackelable, Millionboltable {
@@ -18,7 +18,7 @@ public class Picachu extends ElectricTypePokemon implements Tackelable, Millionb
 
     @Override
     public void drawPokemon() {
-        DrawPokemons.drawPicachu();
+        DrawHandler.drawPicachu();
     }
 
     @Override
