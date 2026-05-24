@@ -7,9 +7,26 @@ import java.util.Random;
 public abstract class Pokemon {
 
     protected String name;
-    protected int exp;
-    protected int affection;
-    protected int level;
+    private int exp;
+    private int affection;
+
+    public void setAffection(int affection) {      //setter를 통해 애정도 수정의 책임을 pokemon 클래스로 묶음.
+        if(affection < 0){
+            this.affection = 0;
+            return;
+        }
+        this.affection = affection;
+    }
+
+    public void setExp(int exp) {
+        if(exp < 0){
+            this.exp = 0;
+            return;
+        }
+        this.exp = exp;
+    }
+
+    private int level;
 
     protected Random random = new Random();
 
@@ -28,11 +45,10 @@ public abstract class Pokemon {
     }
 
     public void eat() {
-
         System.out.println(name + "(이)가 맛있게 밥을 먹었다!");
         System.out.println("애정도와 경험치가 10씩 증가합니다!");
-        exp += 10;
-        affection += 10;
+        setExp(exp + 10);
+        setAffection(affection + 10);
 
         updateLevel();
         SleepUtill.sleep(1000);
@@ -42,8 +58,8 @@ public abstract class Pokemon {
 
         System.out.println(name + "(와)과 산책을 했다!");
         System.out.println("애정도와 경험치가 20씩 증가합니다!");
-        exp += 20;
-        affection += 20;
+        setExp(exp + 20);
+        setAffection(affection + 20);
 
         updateLevel();
         SleepUtill.sleep(1000);
@@ -59,8 +75,8 @@ public abstract class Pokemon {
 
             System.out.println(name + "의 사냥 성공!");
             System.out.println("애정도와 경험치가 50씩 증가합니다!");
-            exp += 50;
-            affection += 50;
+            setExp(exp + 50);
+            setAffection(affection + 50);
             SleepUtill.sleep(1000);
 
         }
@@ -68,11 +84,8 @@ public abstract class Pokemon {
 
             System.out.println(name + "의 사냥 실패...");
             System.out.println("애정도가 30 하락했습니다.");
-            affection -= 30;
+            setAffection(affection - 30);
 
-            if (affection < 0) {
-                affection = 0;
-            }
             SleepUtill.sleep(1000);
         }
 

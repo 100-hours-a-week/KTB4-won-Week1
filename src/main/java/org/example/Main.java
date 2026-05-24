@@ -2,10 +2,7 @@ package org.example;
 
 import org.example.domain.Pichu;
 import org.example.domain.Pokemon;
-import org.example.utill.DrawHandler;
-import org.example.utill.EndingHandler;
-import org.example.utill.EvolutionHandler;
-import org.example.utill.SleepUtill;
+import org.example.utill.*;
 
 import java.util.Scanner;
 
@@ -51,7 +48,7 @@ public class Main {
             System.out.println("2. 산책하기");
             System.out.println("3. 사냥하기");
             System.out.println("4. 스킬 사용해보기");
-
+            System.out.println("5. 미니게임");
             int choice = sc.nextInt();
 
             switch (choice) {
@@ -66,6 +63,9 @@ public class Main {
                     break;
                 case 4:
                     pokemon.useSkill();
+                    break;
+                case 5:
+                    MiniGameHandler.start(pokemon);
                     break;
                 default:
                     System.out.println("잘못된 입력입니다.");
